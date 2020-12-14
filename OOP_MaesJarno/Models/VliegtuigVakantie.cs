@@ -8,7 +8,7 @@ namespace OOP_MaesJarno.Models
 {
     public class VliegtuigVakantie:Reis
     {
-        private double VliegtuigTicketPrijs;
+        public double VliegtuigTicketPrijs { get; private set; }
 
         //Constructor voor vliegtuigvakantie die erft van de base Class
         public VliegtuigVakantie(int vliegtuigTicketPrijs,DateTime vertrekDatum, DateTime terugKeerDatum, int aantalPersonen) :base (vertrekDatum,terugKeerDatum,aantalPersonen)

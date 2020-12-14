@@ -10,8 +10,8 @@ namespace OOP_MaesJarno.Models
     {
         private const double BasisDagPrijs = 40;
 
-        private int AantalDagen;
-        private int AantalPersonen;
+        public int AantalDagen { get; set; }
+        public int AantalPersonen { get; set; }
         private DateTime TerugKeerDatum;
         private DateTime VertrekDatum;
 
@@ -89,9 +89,11 @@ namespace OOP_MaesJarno.Models
             var TotaalPrijs = AantalDagen * BasisDagPrijs * AantalPersonen;
             return TotaalPrijs;
         }
-
-        public Reis()
+        public override string ToString()
         {
+            return $"Aantal personen: {AantalPersonen}\nAantal Dagen: {AantalDagen}\nVertrek Datum: {VertrekDatum.Day}{VertrekDatum.Month}{VertrekDatum.Year}" +
+                $"\nTerugkeer Datum: {TerugKeerDatum.Day}{TerugKeerDatum.Month}{TerugKeerDatum.Year}\nTotaal Prijs: {BerekenPrijs()} EURO";
+
 
         }
     }

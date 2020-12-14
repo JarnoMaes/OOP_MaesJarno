@@ -9,27 +9,80 @@ namespace OOP_MaesJarno
 {
     class Program
     {
+        Adress AJarno = new Adress() 
+        { 
+            Gemeente = "Willebroek",
+            HuisNmr = "2", 
+            PostCode = 2830, 
+            Straat = "Eggestraat" 
+        };
 
-        Adress adressJarno = new Adress("Willebroek", "2", 2830, "Eggestraat");
-        Persoon Jarno = new Persoon("Eggestraat 2, 2830 Willebroek", "Maes", "Jarno");
-        Reisbureau TUI = new Reisbureau("Gistelsesteenweg 1, 8400 Oostende", "TUI");
-        Autovakantie AutoJarno = new Autovakantie(false, new DateTime(2020, 12, 10), new DateTime(2020, 12, 15), 3);
-        VliegtuigVakantie VliegJarno = new VliegtuigVakantie(110, new DateTime(2021, 01, 15), new DateTime(2021, 01, 25), 4);
-        Cruise CruiseJarno = new Cruise(true, new DateTime(2021, 01, 10), new DateTime(2021, 02, 20), 10);
+        Adress AJordy = new Adress
+        {
+            Gemeente = "Willebroek",
+            HuisNmr = "21",
+            PostCode = 2830,
+            Straat = "Breendonksesteenweg"
+        };
 
-        Adress adressThomas = new Adress("Oostende", "18", 8400, "Oostendestraat");
-        Persoon Thomas = new Persoon("Kleilaan 18, 8400 Oostende", "Kliko", "Thomas");
-        Reisbureau Neckermann = new Reisbureau("Neckermannweg 12, 5200 Brugge", "Neckermann");
-        Autovakantie AutoThomas = new Autovakantie(true, new DateTime(2020, 12, 18), new DateTime(2020, 12, 25), 4);
-        VliegtuigVakantie VliegThomas = new VliegtuigVakantie(250, new DateTime(2021, 01, 10), new DateTime(2021, 02, 21), 5);
-        Cruise CruiseThomas = new Cruise(false, new DateTime(2021, 01, 17), new DateTime(2021, 01, 28), 25);
+        Adress AErwin = new Adress()
+        {
+            Gemeente = "Gent",
+            HuisNmr = "250",
+            PostCode = 9000,
+            Straat = "Gentsesteenweg"
+        };
+        Adress ANeckermann = new Adress()
+        {
+            Gemeente = "Mechelen",
+            HuisNmr = "560",
+            PostCode = 2800,
+            Straat = "Mechelsesteenweg"
+        };
+        Adress ATUI = new Adress()
+        {
+            Gemeente = "Wijnegem",
+            HuisNmr = "1",
+            PostCode = 3400,
+            Straat = "Wijnegemsestraat"
+        };
 
-        Adress adressLina = new Adress("Beernem", "850", 6500, "Beernmsestraat");
-        Persoon Lina = new Persoon("Linastraat 707, 5000 Beernem", "Moeilijk", "Lina");
-        Reisbureau Swiss = new Reisbureau("Swisseweg, 2050 Zoersel", "Swiss");
-        Autovakantie AutoLina = new Autovakantie(false, new DateTime(2021, 05, 12), new DateTime(2021, 10, 12), 2);
-        VliegtuigVakantie VliegLina = new VliegtuigVakantie(450, new DateTime(2021, 02, 05), new DateTime(2021, 02, 10), 10);
-        Cruise CruiseLina = new Cruise(true, new DateTime(2021, 03, 08), new DateTime(2021, 03, 25), 5);
+        Persoon Jarno = new Persoon()
+        {
+            VoorNaam = "Jarno",
+            FamilieNaam = "Maes",
+            //Adress = Ajarno
+        };
+        Persoon Jordy = new Persoon() 
+        {
+            VoorNaam = "Jordy",
+            FamilieNaam = "Maes",
+            //Adress = AJordy 
+        };
+        Persoon Erwin = new Persoon() 
+        { 
+            VoorNaam = "Erwin",
+            FamilieNaam = "Naegels",
+            //Adress = AErwin
+        };
+        Reisbureau TUI = new Reisbureau() 
+        { 
+            //Adress = ATUI,
+            Naam = "TUI" 
+        };
+        Reisbureau Neckermann = new Reisbureau() 
+        { 
+            //Adress = ANeckermann,
+            Naam = "Neckermann" 
+        };
+               
+        Autovakantie VakantieJarno = new Autovakantie(true,new DateTime(2020,15,12),new DateTime(2020,20,12),5);
+        VliegtuigVakantie VakantieJordy = new VliegtuigVakantie(250,new DateTime(2020,20,12),new DateTime(2020,30,12),3);        
+        Cruise VakantieErwin = new Cruise(true,new DateTime(2021,15,01),new DateTime(2021,25,01),10);
+
+        ReisReservatie ReservatieJarno = new ReisReservatie(Jarno, VakantieJarno, TUI);      
+        ReisReservatie ReservatieJordy = new ReisReservatie(Jordy, VakantieJordy, Neckermann);       
+        ReisReservatie reservatieErwin = new ReisReservatie(Erwin, VakantieErwin,TUI);
 
     }
 }

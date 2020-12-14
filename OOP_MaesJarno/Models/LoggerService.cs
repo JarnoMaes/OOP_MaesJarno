@@ -8,19 +8,21 @@ namespace OOP_MaesJarno.Models
 {
     public static class LoggerService
     {
-        
-        
-        //----NIET KUNNEN OPLOSSEN----//
-        
-        //private static LogMessage[] logs;
+        private static LogMessage[] Logs;
+        public static LogMessage[] logs
+        {
+            get { return Logs; }
+            set { Logs = value; }
+        }
+        static LoggerService()
+        {
+            logs = new LogMessage[0];
+        }
 
-        //public LoggerService()
-        //{
-            
-        //}
-      
-
-
-
+        public static void AddLog(LogMessage boodschap)
+        {
+            Array.Resize(ref Logs, Logs.Length + 1);
+            Logs[Logs.Length - 1] = boodschap;
+        }            
     }
 }

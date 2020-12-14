@@ -8,27 +8,23 @@ namespace OOP_MaesJarno.Models
 {
     public class LogMessage
     {
-        private string Boodschap;
-        public int ID;
+        public string Boodschap { get; private set; }
+        public int ID { get; private set; }
+        private static int _counter { get; set; }
 
-        //Constructor voor Logmessage
+        private int GenereedID()
+        {
+            _counter++;
+            return _counter;
+        }
         public LogMessage(string boodschap)
         {
             Boodschap = boodschap;
-            ID = GenerateID();
+            ID = GenereedID();
         }
-        //Get and set van boodschap
-        public string boodschap
+        public override string ToString()
         {
-            get { return Boodschap; }
-            set { Boodschap = value; }
-        }
-        //Method for generating Id
-        public int GenerateID()
-        {
-            Random rnd = new Random();
-            ID = rnd.Next(1, 8);
-            return ID;
+            return $"-----------------\nLogMessage: {ID} {Boodschap}";
         }
     }
 }
